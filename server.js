@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const admin = require('firebase-admin');
-const serviceAccount = require('./practica-nofiticaciones-push-firebase-adminsdk-a5wrx-9580afcc0b.json'); // Tu clave privada de Firebase
+
+// Obtener las credenciales desde la variable de entorno
+const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
 
 const app = express();
 app.use(cors());
